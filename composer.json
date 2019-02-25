@@ -1,5 +1,5 @@
 {
-    "name": "sgomez/adldap2-bundle",
+    "name": "thecamp/adldap2-bundle",
     "description": "Symfony Bundle for adldap2 library.",
     "type": "library",
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "require": {
         "php"                           : ">=5.5.9",
-        "adldap2/adldap2"               : "~7.0",
+        "adldap2/adldap2"               : "^10.0",
         "symfony/config"                : "^3.4|^4.0",
         "symfony/dependency-injection"  : "^3.4|^4.0",
         "symfony/http-kernel"           : "^3.4|^4.0"
