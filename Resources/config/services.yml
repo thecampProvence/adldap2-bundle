@@ -1,0 +1,5 @@
+services:
+    adldap2:
+        class: Adldap\Adldap
+        arguments:
+            - '@logger'

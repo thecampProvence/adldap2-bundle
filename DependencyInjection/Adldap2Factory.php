@@ -17,8 +17,10 @@ use Psr\Log\LoggerInterface;
 
 class Adldap2Factory
 {
-    public static function createConnection(array $config)//, LoggerInterface $logger
+    public static function createConnection(LoggerInterface $logger, array $config)
     {
+        Adldap::setLogger($logger);
+
         $ad = new Adldap();
         $ad->addProvider(new Provider($config));
         $ad->connect();
