@@ -13,16 +13,20 @@ class Adldap2Extension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-
-
+        $configuration      = new Configuration();
+        $config             = $this->processConfiguration($configuration, $configs);
         $connectionSettings = $config['connection_settings'];
+
         if (!empty($connectionSettings['account_suffix'])) {
             $connectionSettings['account_suffix'] = '@'.$connectionSettings['account_suffix'];
         } else {
             unset($connectionSettings['account_suffix']);
         }
+
+        // var_dump($container->get('logger'));
+        // var_dump($container->getDefinition('logger'));
+        // new Reference('logger')
+        // exit;
 
         $service = $container->register('adldap2', Adldap::class);
         $service->setFactory([

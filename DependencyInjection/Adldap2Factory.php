@@ -13,10 +13,11 @@ namespace Sgomez\Bundle\Adldap2Bundle\DependencyInjection;
 
 use Adldap\Adldap;
 use Adldap\Connections\Provider;
+use Psr\Log\LoggerInterface;
 
 class Adldap2Factory
 {
-    public static function createConnection(array $config)
+    public static function createConnection(array $config)//, LoggerInterface $logger
     {
         $ad = new Adldap();
         $ad->addProvider(new Provider($config));
